@@ -34,18 +34,22 @@
       <div class="col-md-8">
         <h2>Helping You Search For The Best Home</h2>
         <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate iure est possimus numquam?</p>
-        <img src="" alt="#">
+        <img src="./static/img/about_houses.jpg" alt="#">
         <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptate reiciendis repellat, omnis error delectus enim. Optio inventore laudantium dolorem neque esse! Alias esse facere consequatur laboriosam rerum? Odio unde fugit consequatur laborum ratione temporibus illo impedit ipsam tempora expedita!</p>
       </div>
       <div class="col-md-4">
-        <div class="card">
-          <img class="card-img" src="" alt="Seller of the Month">
-          <div class="card-body">
-            <h5 class="card-title">Seller of The Month</h5>
-            <h6 class="text-secondary">Kyle Allen</h6>
-            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis eaque vitae repellat laborum eius voluptate, nesciunt veniam minima soluta sequi!</p>
+        {% if mvp_realtors %}
+          {% for realtor in mvp_realtors %}
+          <div class="card">
+            <img class="card-img" src="{{ realtor.photo.url }}" alt="Seller of the Month">
+            <div class="card-body">
+              <h5 class="card-title">Seller of The Month</h5>
+              <h6 class="text-secondary">{{ realtor.name }}</h6>
+              <p class="card-text">{{ realtor.description }}</p>
+            </div>
           </div>
-        </div>
+          {% endfor %}
+        {% endif %}
       </div>
     </div>
   </div>
@@ -61,49 +65,29 @@
 <section id="team" class="py-5">
   <div class="container">
     <h2 class="text-center">Our Team</h2>
-    <div class="row">
-      <div class="col-md-4">
-        <img src="" alt="" class="">
-        <h4>Cassie Jacobs</h4>
-        <p class="text-success">
-          <i class="fas fa-award text-success mb-3"> Realtor</i>
-        </p>
-        <hr>
-        <p>
-          <i class="fas fa-phone"> (555)555-5555</i>
-        </p>
-        <p>
-          <i class="fas fa-envelope-open"> Cassie@gpgroup.com</i>
-        </p>
-      </div>
-      <div class="col-md-4">
-        <img src="" alt="" class="">
-        <h4>Garrett Smith</h4>
-        <p class="text-success">
-          <i class="fas fa-award text-success mb-3"> Realtor</i>
-        </p>
-        <hr>
-        <p>
-          <i class="fas fa-phone"> (111)522-5555</i>
-        </p>
-        <p>
-          <i class="fas fa-envelope-open"> Garrett@gpgroup.com</i>
-        </p>
-      </div>
-      <div class="col-md-4">
-        <img src="" alt="" class="">
-        <h4>Kim Nguyen</h4>
-        <p class="text-success">
-          <i class="fas fa-award text-success mb-3"> Realtor</i>
-        </p>
-        <hr>
-        <p>
-          <i class="fas fa-phone"> (555)444-5555</i>
-        </p>
-        <p>
-          <i class="fas fa-envelope-open"> Kim@gpgroup.com</i>
-        </p>
-      </div>
+    <div class="row text-center">
+      {% if realtors %}
+        {% for realtor in realtors %}
+        <div class="col-md-4">
+          <img src="{{ realtor.photo.url }}" alt="" class="">
+          <h4>{{ realtor.name }}</h4>
+          <p class="text-success">
+            <i class="fas fa-award text-success mb-3"> Realtor</i>
+          </p>
+          <hr>
+          <p>
+            <i class="fas fa-phone"> {{ realtor.phone }}</i>
+          </p>
+          <p>
+            <i class="fas fa-envelope-open"> {{ realtor.email }}</i>
+          </p>
+        </div>
+        {% endfor %}
+      {% else %}
+        <div class="col-md-12">
+          <p>No Realtors Available</p>
+        </div>
+      {% endif %}
     </div>
   </div>
 </section>
