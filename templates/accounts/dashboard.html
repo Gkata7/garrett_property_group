@@ -1,1 +1,68 @@
-<h1>Dashboard</h1>
+{% extends 'base.html' %}
+{% block content %}
+<!-- Header Section -->
+<section id="showcase-inner" class="py-3 text-white">
+  <div class="container">
+    <div class="row text-center">
+      <br>
+<!-- Alert Message -->
+{% include 'partials/_alerts.html' %}
+      <div class="col-md-12">
+        <h4 class="display-4">About GPG</h4>
+        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae cumque, iste distinctio blanditiis cum accusamus iure. Exercitationem provident vel eligendi aliquam harum officia magnam expedita.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Breadcrumb -->
+<section id="bc" class="mt-3">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="index.html">
+            <i class="fas fa-home"> Home</i>
+          </a>
+        </li>
+        <li class="breadcrumb-item">Dashboard</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+<!-- Dashboard Content -->
+<section id="dashboard" class="py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Welcome Garrett</h2>
+        <p>Here are the properties you inquired about</p>
+        <table class="table">
+          <thead>
+            <tr>
+              <td scope="col">#</td>
+              <td scope="col">Property</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>22</td>
+              <td>78 Brook Drive</td>
+              <td><a href="#" class="btn btn-light">View Listing</a></td>
+            </tr>
+            <tr>
+              <td>43</td>
+              <td>2500 Court Drive</td>
+              <td><a href="#" class="btn btn-light">View Listing</a></td>
+            </tr>
+            <tr>
+              <td>31</td>
+              <td>7890 Curry Ave</td>
+              <td><a href="#" class="btn btn-light">View Listing</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

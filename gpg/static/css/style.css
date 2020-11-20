@@ -40,7 +40,7 @@ img {
 }
 
 #services {
-  background: url("../img/about_houses.jpg") no-repeat top center fixed/cover;
+  background: url("../img/building.jpg") no-repeat top center;
   min-height: 300px;
   position: relative;
   overflow: hidden; 
