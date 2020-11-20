@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load humanize %}
+{% block title %} | Welcome{% endblock %}
 {% block content %}
 <!-- Showcase top portion -->
   <section id="showcase">
@@ -117,10 +118,10 @@
             </div>
           {% endfor %}
         {% else %}
-          <div class="col-md-12">
-            <p>No Listings Available</p>
-          </div>
-        {% endif %}
+        <div class="col-md-12">
+          <p>No Listings Available</p>
+        </div>
+      {% endif %}
   </section>
   <!-- Services Section -->
   <section id="services" class="bg-secondary text-white py-5 mt-5">
