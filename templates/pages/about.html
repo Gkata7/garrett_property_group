@@ -33,10 +33,11 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8">
-        <h2>Helping You Search For The Best Home</h2>
-        <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate iure est possimus numquam?</p>
+        <h2 class="mb-4">Helping You Search For The Best Home</h2>
         <img src="./static/img/about_houses.jpg" alt="#">
-        <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptate reiciendis repellat, omnis error delectus enim. Optio inventore laudantium dolorem neque esse! Alias esse facere consequatur laboriosam rerum? Odio unde fugit consequatur laborum ratione temporibus illo impedit ipsam tempora expedita!</p>
+        <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate iure est possimus numquam?</p>
+        <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptate reiciendis repellat, omnis error delectus enim. Optio inventore laudantium dolorem neque esse! Alias esse facere consequatur laboriosam rerum? Odio unde fugit consequatur laborum ratione temporibus illo impedit ipsam tempora expedita! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut dolorum est quo numquam voluptatum culpa adipisci a hic vitae neque.
+        </p>
       </div>
       <div class="col-md-4">
         {% if mvp_realtors %}
@@ -56,7 +57,7 @@
   </div>
 </section>
 <!---- Header section ----->
-<section id="work" class="text-center bg-dark text-white mt-5">
+<section id="work" class="text-center bg-primary text-white mt-5">
   <h2 class="display-4">We Will Assist You In Anyway</h2>
   <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi sapiente quia, quisquam facilis consequatur assumenda.</h4>
   <hr>
@@ -69,7 +70,7 @@
     <div class="row text-center">
       {% if realtors %}
         {% for realtor in realtors %}
-        <div class="col-md-4">
+        <div class="col-md-4 mt-4">
           <img src="{{ realtor.photo.url }}" alt="" class="">
           <h4>{{ realtor.name }}</h4>
           <p class="text-success">

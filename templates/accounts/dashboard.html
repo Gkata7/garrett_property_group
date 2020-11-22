@@ -4,13 +4,13 @@
 <!-- Header Section -->
 <section id="showcase-inner" class="py-3 text-white">
   <div class="container">
-    <div class="row text-center">
+    <div class="row text-center mt-4">
       <br>
 <!-- Alert Message -->
 {% include 'partials/_alerts.html' %}
       <div class="col-md-12">
-        <h4 class="display-4">About GPG</h4>
-        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae cumque, iste distinctio blanditiis cum accusamus iure. Exercitationem provident vel eligendi aliquam harum officia magnam expedita.</p>
+        <h4 class="display-4">User Dashboard</h4>
+        <p class="lead">Manage your GPG Real Estate Account .</p>
       </div>
     </div>
   </div>
@@ -25,17 +25,18 @@
             <i class="fas fa-home"> Home</i>
           </a>
         </li>
-        <li class="breadcrumb-item">Dashboard</li>
+        <li class="breadcrumb-item active"> Dashboard</li>
       </ol>
     </nav>
   </div>
 </section>
 <!-- Dashboard Content -->
-<section id="dashboard" class="py-4">
+<section id="dashboard" class="py-5">
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
-        <h2>Welcome Garrett</h2>
+      <div class="col-md-12 mt-3">
+        <h2>Welcome {{ user.first_name }}</h2>
+        {% if contacts %}
         <p>Here are the properties you inquired about</p>
         <table class="table">
           <thead>
@@ -45,23 +46,18 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>22</td>
-              <td>78 Brook Drive</td>
-              <td><a href="#" class="btn btn-light">View Listing</a></td>
-            </tr>
-            <tr>
-              <td>43</td>
-              <td>2500 Court Drive</td>
-              <td><a href="#" class="btn btn-light">View Listing</a></td>
-            </tr>
-            <tr>
-              <td>31</td>
-              <td>7890 Curry Ave</td>
-              <td><a href="#" class="btn btn-light">View Listing</a></td>
-            </tr>
+            {% for contact in contacts %}
+              <tr>
+                <td>{{ contact.id }}</td>
+                <td>{{ contact.listing}}</td>
+                <td><a href="{% url 'listing' contact.listing_id %}" class="btn btn-light">View Listing</a></td>
+              </tr>
+            {% endfor %}
           </tbody>
         </table>
+        {% else %}
+          <p>You have not made any inquiries</p>
+        {% endif %}
       </div>
     </div>
   </div>
