@@ -3,7 +3,7 @@
 {% block title %} | {{ listing.title }}{% endblock %}
 {% block content %}
 <!-- Top Banner -->
-<section id="showcase-inner" class="text-white py-5">
+<section id="showcase-inner-listings" class="text-white py-5">
   <div class="container">
     <div class="row text-center">
       <div class="col-md-12">
@@ -73,7 +73,7 @@
           {% if listing.photo_six %}
           <div class="col-md-2">
             <a href="{{ listing.photo_six.url }}" data-lightbox="home-images">
-              <img src="{{ listing.photo_six.url }" alt="" class="img-fluid">
+              <img src="{{ listing.photo_six.url }}" alt="" class="img-fluid">
             </a>
           </div>
           {% endif %}
