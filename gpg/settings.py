@@ -26,7 +26,7 @@ SECRET_KEY = '@i%l3&w!04iu17_3xi^gw^z26d2mukwl^a+a6!m0tjeopb3qx6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [0.0.0.0]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -126,12 +126,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'gpg/static')
 ]
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 #Media Folder Settings
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -142,10 +145,11 @@ from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
-
-# Email Config
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 25
-# EMAIL_HOST_USER = ''
-# EMAIL_HOST_PASSWORD = ''
-# EMAIL_USE_TLS=True
+# Heroku
+SECRET_KEY = config('@i%l3&w!04iu17_3xi^gw^z26d2mukwl^a+a6!m0tjeopb3qx6')
+DEBUG = config('DEBUG', default=False, cast=bool)
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=config('')
+#     )
+# }
