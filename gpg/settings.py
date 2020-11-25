@@ -146,10 +146,10 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
 # Heroku
-SECRET_KEY = config('@i%l3&w!04iu17_3xi^gw^z26d2mukwl^a+a6!m0tjeopb3qx6')
-DEBUG = config('DEBUG', default=False, cast=bool)
-# DATABASES = {
-#     'default': dj_database_url.config(
-#         default=config('')
-#     )
-# }
+# SECRET_KEY = config('@i%l3&w!04iu17_3xi^gw^z26d2mukwl^a+a6!m0tjeopb3qx6')
+# DEBUG = config('DEBUG', default=False, cast=bool)
+# # DATABASES = {
+# #     'default': dj_database_url.config(
+# #         default=config('')
+# #     )
+# # }
